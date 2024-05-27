@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Update Multiplication</title>
+</head>
+<body>
+
+<h2>Live Update Multiplication</h2>
+
+<label for="value1">Value 1:</label>
+<input type="number" id="value1" value="0"><br><br>
+
+<label for="value2">Value 2:</label>
+<input type="number" id="value2" value="0"><br><br>
+
+<label for="result">Result:</label>
+<input type="number" id="result" readonly><br><br>
+
+<script>
+// Function to calculate the multiplication and update the result input field
+function updateResult() {
+    var value1 = parseFloat(document.getElementById("value1").value);
+    var value2 = parseFloat(document.getElementById("value2").value);
+    var result = value1 * value2;
+    document.getElementById("result").value = result;
+}
+
+// Call updateResult() initially and add event listeners for live update
+updateResult();
+document.getElementById("value1").addEventListener("input", updateResult);
+document.getElementById("value2").addEventListener("input", updateResult);
+</script>
+
+</body>
+</html>
